@@ -24,6 +24,7 @@ import { Link } from "react-router-dom";
 import Badge from "../components/common/Badge.jsx";
 import Button from "../components/common/Button.jsx";
 import Container from "../components/common/Container.jsx";
+import CountUp from "../components/common/CountUp.jsx";
 import SectionHeading from "../components/common/SectionHeading.jsx";
 import { exams, reasons, stats } from "../data/homeData.js";
 
@@ -388,16 +389,37 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Verified Stats */}
+      {/* High-Impact Animated Counting Stats */}
       <section className="stats-section">
         <Container>
           <div className="stats-grid">
-            {stats.map(([value, label]) => (
-              <div className="stat" key={label}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
+            {stats.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  className="stat-card"
+                  key={item.label || idx}
+                  variants={reveal}
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className={`stat-icon-capsule ${item.tone}`}>
+                    {Icon && <Icon size={24} />}
+                  </div>
+                  <div className="stat-value-wrap">
+                    <strong className="stat-number">
+                      <CountUp
+                        end={item.end}
+                        suffix={item.suffix}
+                        prefix={item.prefix || ""}
+                      />
+                    </strong>
+                    <span className="stat-label">{item.label}</span>
+                    {item.sub && <small className="stat-sub">{item.sub}</small>}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </Container>
       </section>

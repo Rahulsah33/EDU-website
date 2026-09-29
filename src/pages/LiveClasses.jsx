@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import Badge from "../components/common/Badge.jsx";
 import Button from "../components/common/Button.jsx";
 import Container from "../components/common/Container.jsx";
+import Live3DVideoPlayer from "../components/common/Live3DVideoPlayer.jsx";
 import Toast from "../components/common/Toast.jsx";
 import { liveClasses } from "../data/liveClassesData.js";
 
@@ -312,29 +313,14 @@ export default function LiveClasses() {
               </div>
 
               <div className="live-modal-layout">
-                {/* Main Video Screen */}
+                {/* Main 3D Interactive Video Classroom Player */}
                 <div className="live-stream-area">
-                  <div className="mock-stream-frame">
-                    <img
-                      src="/assets/images/live-class.jpg"
-                      alt="Live classroom view"
-                      className="stream-mock-video"
-                    />
-                    <div className="stream-overlay-controls">
-                      <span className="stream-badge">
-                        <Users size={14} /> {selectedLive.viewers + 1} students connected
-                      </span>
-                      <div className="stream-reaction-bar">
-                        <button
-                          className={`like-btn ${hasLiked ? "liked" : ""}`}
-                          onClick={handleLike}
-                        >
-                          <ThumbsUp size={16} /> {likes}
-                        </button>
-                        <span className="stream-hd-tag">1080p HD</span>
-                      </div>
-                    </div>
-                  </div>
+                  <Live3DVideoPlayer
+                    streamTitle={selectedLive.title}
+                    educatorName={selectedLive.educator}
+                    viewers={selectedLive.viewers + 1}
+                    onRaiseHand={() => triggerToast("Hand raised! Your question is prioritized for live answer.")}
+                  />
 
                   <div className="stream-info-bar">
                     <div className="educator-meta-badge">
@@ -351,13 +337,13 @@ export default function LiveClasses() {
                       <Button
                         size="sm"
                         variant="outline"
-                        onClick={() => triggerToast("PDF Lecture Notes downloaded!")}
+                        onClick={() => triggerToast("PDF Lecture Notes & 3D diagrams downloaded!")}
                       >
                         <Download size={14} /> Download Live Notes
                       </Button>
                       <Button
                         size="sm"
-                        onClick={() => triggerToast("Doubt queued for educator live review!")}
+                        onClick={() => triggerToast("Doubt queued for educator 3D live review!")}
                       >
                         <Sparkles size={14} /> Raise Live Hand
                       </Button>

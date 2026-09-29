@@ -11,6 +11,7 @@ import {
   Target,
   Users,
   WalletCards,
+  Zap,
 } from "lucide-react";
 
 export const exams = [
@@ -26,10 +27,10 @@ export const exams = [
 ];
 
 export const stats = [
-  ["1M+", "Learners"],
-  ["500+", "Courses"],
-  ["100+", "Expert educators"],
-  ["50K+", "Practice questions"],
+  { end: 1, suffix: "M+", label: "Learners", prefix: "", icon: GraduationCap, tone: "tone-blue", sub: "Active learners" },
+  { end: 500, suffix: "+", label: "Courses", prefix: "", icon: BookOpen, tone: "tone-orange", sub: "Video curricula" },
+  { end: 100, suffix: "+", label: "Expert educators", prefix: "", icon: Users, tone: "tone-teal", sub: "Top 1% mentors" },
+  { end: 50, suffix: "K+", label: "Practice questions", prefix: "", icon: Zap, tone: "tone-emerald", sub: "With AI solutions" },
 ];
 
 export const reasons = [

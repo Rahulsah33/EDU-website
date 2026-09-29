@@ -4,12 +4,7 @@ import { ThemeContext } from "./themeContext.js";
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("rr-edu-theme");
-    return (
-      saved ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light")
-    );
+    return saved || "light";
   });
 
   useEffect(() => {
