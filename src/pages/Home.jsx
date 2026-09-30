@@ -26,6 +26,10 @@ import Button from "../components/common/Button.jsx";
 import Container from "../components/common/Container.jsx";
 import CountUp from "../components/common/CountUp.jsx";
 import SectionHeading from "../components/common/SectionHeading.jsx";
+import CourseCard from "../components/course/CourseCard.jsx";
+import EducatorCard from "../components/educators/EducatorCard.jsx";
+import courses from "../data/courses.js";
+import educators from "../data/educators.js";
 import { exams, reasons, stats } from "../data/homeData.js";
 
 const reveal = {
@@ -82,11 +86,15 @@ function MasterclassShowcaseCard() {
 
           <div className="showcase-educator-row">
             <div className="showcase-avatar">
-              <span>AV</span>
+              <img
+                src="/assets/images/educators/ananya-sharma.jpg"
+                alt="Prof. Ananya Sharma"
+                className="showcase-avatar-img"
+              />
             </div>
             <div className="showcase-educator-meta">
-              <strong>Dr. Anand Verma</strong>
-              <span>Ph.D., IIT Delhi • 18+ Years Faculty Experience</span>
+              <strong>Prof. Ananya Sharma</strong>
+              <span>Senior Physics Faculty • IIT Rank Mentorship</span>
             </div>
             <div className="showcase-rating-pill">
               <Star size={12} fill="#f59e0b" color="#f59e0b" /> 4.96
@@ -217,6 +225,27 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Featured Flagship Programs */}
+      <section className="featured-courses-home section-space">
+        <Container>
+          <div className="section-head-with-action">
+            <SectionHeading
+              eyebrow="Popular Learning Paths"
+              title="Featured Flagship Programs"
+              description="Master high-yield subjects with structured video curricula, problem sets, and faculty support."
+            />
+            <Link to="/courses" className="button button-outline button-md view-all-btn">
+              Explore All Courses <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="course-grid">
+            {courses.slice(0, 4).map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Tri-Pillar Learning Ecosystem Showcase */}
       <section className="features-showcase-section section-space">
         <Container>
@@ -311,6 +340,27 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Premier Faculty Showcase */}
+      <section className="faculty-home-section section-space">
+        <Container>
+          <div className="section-head-with-action">
+            <SectionHeading
+              eyebrow="Distinguished Mentors"
+              title="Learn from India’s Foremost Faculty"
+              description="Experienced educators and subject matter experts dedicated to your academic growth."
+            />
+            <Link to="/educators" className="button button-outline button-md view-all-btn">
+              View All Educators <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="featured-educator-grid">
+            {educators.slice(0, 4).map((educator) => (
+              <EducatorCard key={educator.id} educator={educator} />
+            ))}
           </div>
         </Container>
       </section>

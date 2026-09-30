@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  ArrowRight,
   Check,
   Globe2,
   Heart,
@@ -279,7 +280,7 @@ export default function CourseDetails() {
             </div>
             <Link className="text-link" to="/courses">
               Explore all courses{" "}
-              <ArrowLeft size={16} className="related-arrow" />
+              <ArrowRight size={16} className="related-arrow" />
             </Link>
           </div>
           <div className="course-grid related-course-grid">
