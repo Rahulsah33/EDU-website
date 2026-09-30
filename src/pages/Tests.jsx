@@ -106,8 +106,7 @@ export default function Tests() {
 
           <div className="tests-hero-inner">
             <div className="tests-hero-copy">
-              <Badge variant="primary">Real Exam Simulator</Badge>
-              <h1>Benchmark Your Speed, Accuracy & Readiness</h1>
+              <h1>Benchmark Your <em className="serif-accent">Speed & Accuracy</em> in National Arenas</h1>
               <p>
                 Practice full-length national mock tests with real-time timers,
                 detailed explanations, subject strength heatmaps, and percentile ranking.
@@ -131,8 +130,8 @@ export default function Tests() {
 
             <div className="tests-hero-visual">
               <img
-                src="/assets/images/study-resources.jpg"
-                alt="Test prep arena"
+                src="/assets/images/exam-arena.jpg"
+                alt="National Exam Testing Simulator Arena"
                 className="test-hub-img"
               />
             </div>

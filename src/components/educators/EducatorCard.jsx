@@ -14,25 +14,27 @@ function formatCount(value) {
 
 export function EducatorAvatar({ educator, className = "" }) {
   const [imageFailed, setImageFailed] = useState(false);
+  const avatarPath = educator.avatar || educator.image;
   const isImage =
-    typeof educator.avatar === "string" &&
-    educator.avatar.startsWith("http") &&
+    typeof avatarPath === "string" &&
+    (avatarPath.startsWith("http") || avatarPath.startsWith("/") || avatarPath.includes(".")) &&
     !imageFailed;
+
   return (
     <div className={`educator-avatar ${className}`}>
       {isImage ? (
         <img
-          src={educator.avatar}
+          src={avatarPath}
           alt={`Portrait of ${educator.name}`}
           onError={() => setImageFailed(true)}
+          className="educator-avatar-img"
         />
       ) : (
         <span aria-label={`${educator.name} initials`}>
-          {educator.avatar ||
-            educator.name
-              .split(" ")
-              .map((part) => part[0])
-              .join("")}
+          {educator.name
+            .split(" ")
+            .map((part) => part[0])
+            .join("")}
         </span>
       )}
     </div>

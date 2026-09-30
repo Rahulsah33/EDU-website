@@ -23,7 +23,7 @@ export default function Signup() {
       setTimeout(() => setToastMsg(""), 3000);
       return;
     }
-    setToastMsg(`Welcome aboard, ${name}! Your RR Edu account is ready.`);
+    setToastMsg(`Welcome aboard, ${name}! Your R Academy account is ready.`);
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
@@ -44,7 +44,7 @@ export default function Signup() {
                 <span className="brand-mark">
                   <span />
                 </span>
-                <span>RR Edu</span>
+                <span>R Academy</span>
               </Link>
               <h2>Create your free account</h2>
               <p>Join 1M+ learners preparing smarter for competitive exams and tech careers.</p>
@@ -56,7 +56,7 @@ export default function Signup() {
                 type="button"
                 className="social-btn"
                 onClick={() => {
-                  setToastMsg("Signed up with Google! Welcome to RR EDU.");
+                  setToastMsg("Signed up with Google! Welcome to R Academy.");
                   setTimeout(() => navigate("/dashboard"), 1000);
                 }}
               >
@@ -163,7 +163,7 @@ export default function Signup() {
                     required
                   />
                   <span>
-                    I agree to RR Edu's <a href="#terms">Terms of Service</a> &{" "}
+                    I agree to R Academy's <a href="#terms">Terms of Service</a> &{" "}
                     <a href="#privacy">Privacy Policy</a>
                   </span>
                 </label>

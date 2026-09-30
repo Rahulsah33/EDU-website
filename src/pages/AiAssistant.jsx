@@ -49,7 +49,7 @@ const initialMessages = [
   {
     id: "m-1",
     sender: "ai",
-    text: "👋 Hi there! I'm your **RR Edu AI Tutor**.\n\nI can help you solve tricky problems step-by-step, explain complex formulas with simple analogies, generate revision flashcards, or practice mock questions for JEE, NEET, UPSC, and Software Engineering.\n\nWhat would you like to master today?",
+    text: "👋 Hi there! I'm your **R Academy Study Assistant**.\n\nI can help you solve tricky problems step-by-step, explain complex formulas with simple analogies, generate revision flashcards, or practice mock questions for JEE, NEET, UPSC, and Software Engineering.\n\nWhat would you like to master today?",
     time: "Just now",
   },
 ];
@@ -249,9 +249,9 @@ export default function AiAssistant() {
             <div className="ai-hero-copy">
               <div className="ai-status-badge">
                 <Sparkles size={14} className="text-primary" />
-                <span>Powered by RR Edu Quantum</span>
+                <span>Powered by R Academy Neural Engine</span>
               </div>
-              <h1>Your 24/7 Personal AI Tutor</h1>
+              <h1>Your 24/7 Academic Study Assistant</h1>
               <p>
                 Get instant step-by-step solutions, intuitive real-world analogies,
                 custom flashcards, and exam-grade doubt resolution anytime, anywhere.
@@ -275,13 +275,13 @@ export default function AiAssistant() {
             <div className="ai-hero-avatar-card">
               <img
                 src="/assets/images/ai-tutor.jpg"
-                alt="AI Tutor Avatar"
+                alt="R Academy AI Assistant"
                 className="ai-avatar-glow-img"
               />
               <div className="ai-avatar-tag">
                 <span className="ai-online-dot" />
                 <div>
-                  <strong>RR Edu Tutor</strong>
+                  <strong>R Academy Assistant</strong>
                   <small>Always online • 0.2s latency</small>
                 </div>
               </div>
@@ -352,7 +352,7 @@ export default function AiAssistant() {
                         {m.sender === "ai" ? (
                           <>
                             <BrainCircuit size={15} className="text-primary" />
-                            <strong>RR Edu</strong>
+                            <strong>R Academy</strong>
                           </>
                         ) : (
                           <>
@@ -401,7 +401,7 @@ export default function AiAssistant() {
                       <span />
                       <span />
                     </div>
-                    <em>RR Edu Tutor is formulating step-by-step explanation...</em>
+                    <em>R Academy Assistant is formulating step-by-step explanation...</em>
                   </div>
                 )}
               </div>

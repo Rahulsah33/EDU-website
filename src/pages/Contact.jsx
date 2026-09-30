@@ -22,11 +22,11 @@ const campusCenters = [
   {
     id: "bengaluru",
     city: "Bengaluru",
-    name: "RR Edu Headquarters & Innovation Center",
+    name: "R Academy Headquarters & Innovation Center",
     tag: "National HQ",
     address: "Koramangala 5th Block, 80 Feet Main Road, Bengaluru, Karnataka 560095",
     phone: "+91 80 4567 8900",
-    email: "bengaluru@rr.edu",
+    email: "bengaluru@racademy.edu",
     hours: "Mon - Sat: 8:00 AM – 8:00 PM IST",
     metro: "Near Sony World Junction / Forum South Metro",
     query: "Koramangala%205th%20Block%20Bengaluru%20India",
@@ -34,11 +34,11 @@ const campusCenters = [
   {
     id: "delhi",
     city: "New Delhi",
-    name: "RR Edu Academic & Exam Counseling Hub",
+    name: "R Academy Academic & Exam Counseling Hub",
     tag: "Northern Hub",
     address: "Barakhamba Road, Statesman House, Connaught Place, New Delhi 110001",
     phone: "+91 11 2345 6789",
-    email: "delhi@rr.edu",
+    email: "delhi@racademy.edu",
     hours: "Mon - Sat: 8:30 AM – 8:30 PM IST",
     metro: "Rajiv Chowk Gate 2 / Barakhamba Road Metro",
     query: "Connaught%20Place%20New%20Delhi%20India",
@@ -46,11 +46,11 @@ const campusCenters = [
   {
     id: "hyderabad",
     city: "Hyderabad",
-    name: "RR Edu Tech & Hybrid Classroom Arena",
+    name: "R Academy Tech & Hybrid Classroom Arena",
     tag: "Tech Hub",
     address: "Mindspace IT Park, Building 12B, Madhapur, Hitec City, Hyderabad 500081",
     phone: "+91 40 6789 0123",
-    email: "hyderabad@rr.edu",
+    email: "hyderabad@racademy.edu",
     hours: "Mon - Sat: 9:00 AM – 8:00 PM IST",
     metro: "Hitec City / Raidurg Metro Station",
     query: "Hitec%20City%20Madhapur%20Hyderabad%20India",
@@ -225,7 +225,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Toll-Free Student Helpline</h4>
-                  <p>1800-123-RR EDU (9 AM – 9 PM IST)</p>
+                  <p>1800-123-R-ACADEMY (9 AM – 9 PM IST)</p>
                   <small>Available Monday to Sunday</small>
                 </div>
               </div>

@@ -13,6 +13,17 @@ const instructorDetails = {
   "inst-dev-malhotra": { experience: "11+ years experience", courses: 15 },
 };
 
+const instructorPhotoMap = {
+  "inst-ananya-sharma": "/assets/images/educators/ananya-sharma.jpg",
+  "inst-rohan-mehta": "/assets/images/educators/rohan-mehta.jpg",
+  "inst-priya-menon": "/assets/images/educators/priya-menon.jpg",
+  "inst-arjun-kapoor": "/assets/images/educators/arjun-kapoor.jpg",
+  "inst-kavya-iyer": "/assets/images/educators/kavya-iyer.jpg",
+  "inst-vikram-singh": "/assets/images/educators/vikram-singh.jpg",
+  "inst-meera-nair": "/assets/images/educators/meera-nair.jpg",
+  "inst-dev-malhotra": "/assets/images/educators/dev-malhotra.jpg",
+};
+
 export default function InstructorCard({ course }) {
   const details = instructorDetails[course.instructorId] || {
     experience: "5+ years experience",
@@ -26,6 +37,7 @@ export default function InstructorCard({ course }) {
     .split(" ")
     .map((name) => name[0])
     .join("");
+  const photo = instructorPhotoMap[course.instructorId];
 
   return (
     <section className="detail-section instructor-section">
@@ -33,7 +45,18 @@ export default function InstructorCard({ course }) {
       <h2>Learn from experience</h2>
       <div className="instructor-card">
         <div className="instructor-avatar" aria-hidden="true">
-          {initials}
+          {photo ? (
+            <img
+              src={photo}
+              alt={course.instructor}
+              className="instructor-avatar-img"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          ) : (
+            <span>{initials}</span>
+          )}
         </div>
         <div className="instructor-information">
           <div className="instructor-heading">

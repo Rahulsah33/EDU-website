@@ -70,11 +70,11 @@ export default function About() {
           <div className="about-hero-inner">
             <div className="about-hero-copy">
               <Badge variant="primary">Our Story & Mission</Badge>
-              <h1>Democratizing Elite Learning For Every Ambitious Mind</h1>
+              <h1>Democratizing <em className="serif-accent">elite education</em> for every ambitious scholar.</h1>
               <p>
-                At RR Edu, we believe world-class education shouldn't be a
+                At R Academy, we believe world-class education shouldn't be a
                 privilege of geography or wealth. We combine India's finest
-                educators with cutting-edge AI to provide an unfair advantage to
+                educators with structured pedagogy to provide a decisive academic advantage to
                 every student.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function About() {
             <div className="about-hero-visual">
               <img
                 src="/assets/images/hero-ai.jpg"
-                alt="About RR Edu Learning Platform"
+                alt="About R Academy Learning Platform"
                 className="about-hero-img"
               />
             </div>
@@ -164,7 +164,7 @@ export default function About() {
         <Container>
           <div className="about-cta-box">
             <h2>Ready To Start Your Learning Journey?</h2>
-            <p>Join over 1 million learners building their dreams with RR Edu today.</p>
+            <p>Join over 1 million learners building their dreams with R Academy today.</p>
             <div className="cta-btn-group">
               <Button size="lg" to="/signup">
                 Create Free Account

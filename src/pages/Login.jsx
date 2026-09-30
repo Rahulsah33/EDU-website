@@ -21,7 +21,7 @@ export default function Login() {
       setTimeout(() => setToastMsg(""), 3000);
       return;
     }
-    setToastMsg("Logging in... Welcome back to RR Edu!");
+    setToastMsg("Logging in... Welcome back to R Academy!");
     setTimeout(() => {
       navigate("/dashboard");
     }, 1000);
@@ -42,7 +42,7 @@ export default function Login() {
                 <span className="brand-mark">
                   <span />
                 </span>
-                <span>RR Edu</span>
+                <span>R Academy</span>
               </Link>
               <h2>Welcome back</h2>
               <p>Log in to access your live batches, AI tutor, and notes.</p>

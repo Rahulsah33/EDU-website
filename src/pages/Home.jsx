@@ -44,130 +44,62 @@ const topInstitutions = [
   "McKinsey & Co",
 ];
 
-function ExecutiveCommandCenter() {
+function MasterclassShowcaseCard() {
   return (
     <motion.div
-      className="dashboard-wrap"
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7, delay: 0.15 }}
+      className="hero-showcase-container"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
     >
-      <div className="dashboard-glow" />
-      <motion.div
-        className="dashboard-card"
-        animate={{ y: [0, -6, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        {/* Top Header of Command Center */}
-        <div className="dash-top">
-          <div>
-            <div className="dash-badge-row">
-              <span className="live-pulse-dot" />
-              <span className="dash-kicker">Learning Command Center</span>
-            </div>
-            <h3>Hyy👋,  Aanya</h3>
-          </div>
-          <div className="avatar-wrap">
-            <div className="avatar">A</div>
-            <span className="avatar-status-dot" title="Active learner" />
-          </div>
-        </div>
-
-        {/* Real-time Progress & Percentile Gauge */}
-        <div className="progress-panel">
-          <div className="progress-copy">
-            <div>
-              <span className="progress-title">Target Syllabus Mastery</span>
-              <div className="progress-sub">JEE Advanced & Full-Stack Track</div>
-            </div>
-            <div className="progress-value-block">
-              <strong>75%</strong>
-              <span className="percentile-pill">Top 2.5%</span>
-            </div>
-          </div>
-          <div className="progress-track">
-            <span style={{ width: "78%" }} />
-          </div>
-          <div className="progress-foot">
-            <span>Predicted Score: 284 / 300</span>
-            <span className="trend-stat">
-              <TrendingUp size={13} /> +14 pts this week
+      <div className="showcase-card-main">
+        {/* Live Preview Media Frame */}
+        <div className="showcase-media-frame">
+          <img
+            src="/assets/images/live-class.jpg"
+            alt="Live classroom lecture preview"
+            className="showcase-media-img"
+          />
+          <div className="showcase-media-overlay">
+            <span className="live-broadcast-pill">
+              <span className="live-pulse-dot" /> LIVE SESSION IN PROGRESS
+            </span>
+            <span className="live-viewer-count">
+              <Users size={12} /> 1,480 Attending
             </span>
           </div>
         </div>
 
-        {/* Metric Tiles */}
-        <div className="dash-grid">
-          <div className="dash-tile course-tile">
-            <span className="tile-label">Active Masterclass</span>
-            <strong>Advanced System Architecture & Cloud</strong>
-            <div className="course-meta">
-              <span className="course-icon-badge">
-                <BookOpen size={12} />
-              </span>
-              <span>Module 4 of 8 • Prof. Verma</span>
+        {/* Masterclass & Instructor Info */}
+        <div className="showcase-details">
+          <div className="showcase-course-tag">JEE Advanced & GATE Track</div>
+          <h3 className="showcase-course-title">
+            Rotational Dynamics & Analytical Mechanics
+          </h3>
+          <p className="showcase-course-desc">
+            Module 4: Moment of Inertia, Angular Momentum & Rigid Body Equilibrium.
+          </p>
+
+          <div className="showcase-educator-row">
+            <div className="showcase-avatar">
+              <span>AV</span>
+            </div>
+            <div className="showcase-educator-meta">
+              <strong>Dr. Anand Verma</strong>
+              <span>Ph.D., IIT Delhi • 18+ Years Faculty Experience</span>
+            </div>
+            <div className="showcase-rating-pill">
+              <Star size={12} fill="#f59e0b" color="#f59e0b" /> 4.96
             </div>
           </div>
-          <div className="dash-tile goal-tile">
-            <span className="tile-label">Daily Problem Target</span>
-            <div className="goal-ring-wrap">
-              <div className="goal-ring">
-                <strong>
-                  18<span>/20</span>
-                </strong>
-              </div>
-            </div>
-            <span className="goal-status">
-              <CheckCircle2 size={12} /> 90% Completed
-            </span>
-          </div>
-        </div>
 
-        {/* Streak & Consistency */}
-        <div className="streak-row">
-          <div className="streak-icon-fire">
-            <Flame size={16} />
-          </div>
-          <div className="streak-details">
-            <span className="tile-label">Study Streak & Consistency</span>
-            <strong>18 Consecutive Days Active</strong>
-          </div>
-          <div className="streak-bars">
-            <i className="active-bar" />
-            <i className="active-bar" />
-            <i className="active-bar" />
-            <i className="active-bar" />
-            <i className="active-bar" />
-            <i className="active-bar" />
-            <i className="active-bar" />
+          <div className="showcase-action-row">
+            <Link to="/live" className="button button-primary button-sm w-full">
+              <Play size={14} /> Join Free Live Preview
+            </Link>
           </div>
         </div>
-
-        {/* Live Masterclass Broadcast Alert */}
-        <div className="upcoming-row">
-          <div className="play-icon-live">
-            <Radio size={14} className="live-broadcast-icon" />
-          </div>
-          <div className="upcoming-details">
-            <span className="tile-label">Live Session Starting</span>
-            <strong>Microservices & Kubernetes</strong>
-          </div>
-          <span className="class-time-badge">
-            <Clock3 size={13} /> In 15 min
-          </span>
-        </div>
-
-        {/* AI Cognitive Copilot Recommendation */}
-        <div className="ai-row">
-          <div className="ai-icon-chip">
-            <Sparkles size={15} />
-          </div>
-          <div>
-            <span className="tile-label">AI Diagnostic Recommendation</span>
-            <p>High weightage: 3 questions predicted from Graph Algorithms & Dynamic Programming.</p>
-          </div>
-        </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
@@ -185,23 +117,17 @@ export default function Home() {
           <div className="hero-grid">
             <motion.div className="hero-copy" variants={reveal}>
               <div className="hero-eyebrow-wrap">
-                <span className="hero-eyebrow-badge">
-                  <ShieldCheck size={14} className="badge-shield-icon" />
-                  India's Digital Academy & Exam Prep Platform
+                <span className="hero-category-tag">
+                  ACADEMIC EXCELLENCE & EXAM PREPARATION
                 </span>
               </div>
 
               <h1>
-                Turn Your Goals
-                <br />
-                <em>Into Reality.</em>
-                <br />
-                <span>With <em>RR Edu.</em></span>
+                Master competitive exams with <em className="serif-accent">India’s foremost</em> academic faculty.
               </h1>
 
               <p className="hero-lead-text">
-                Prepare with top 1% educators, real-time AI doubt solvers, and
-                national-level test simulators designed for JEE, NEET, UPSC, GATE & Software Engineering.
+                Structured live masterclasses, personalized 1-on-1 doubt mentoring, and rigorous All-India test arenas engineered for JEE, NEET, UPSC, GATE & Software Engineering.
               </p>
 
               <div className="hero-actions">
@@ -209,7 +135,7 @@ export default function Home() {
                   Explore All Programs <ArrowRight size={17} />
                 </Button>
                 <Button size="lg" variant="outline" to="/dashboard" className="hero-secondary-cta">
-                  <LayoutDashboard size={16} /> Open Workspace
+                  <LayoutDashboard size={16} /> Student Portal
                 </Button>
               </div>
 
@@ -224,16 +150,16 @@ export default function Home() {
                     <Star size={14} fill="#f59e0b" color="#f59e0b" />
                   </div>
                   <strong>4.9 / 5</strong>
-                  <span>(48,000+ Student Reviews)</span>
+                  <span>(48,000+ Verified Student Reviews)</span>
                 </div>
-                <div className="trust-live-pill">
-                  <span className="trust-pulse" />
-                  <span>14,820 Active Learners Right Now</span>
+                <div className="trust-verified-pill">
+                  <ShieldCheck size={14} />
+                  <span>Recognized Academic Curriculum</span>
                 </div>
               </div>
             </motion.div>
 
-            <ExecutiveCommandCenter />
+            <MasterclassShowcaseCard />
           </div>
         </Container>
       </section>
@@ -295,7 +221,7 @@ export default function Home() {
       <section className="features-showcase-section section-space">
         <Container>
           <SectionHeading
-            eyebrow="The RR Edu Technology Stack"
+            eyebrow="The R Academy Learning Framework"
             title="Engineered for Measurable Academic Excellence"
             description="A cohesive ecosystem uniting live masterclasses, multimodal AI problem solving, and real test arenas."
           />
@@ -366,8 +292,8 @@ export default function Home() {
             >
               <div className="f-card-image-wrap">
                 <img
-                  src="/assets/images/study-resources.jpg"
-                  alt="Mock Test Simulator"
+                  src="/assets/images/exam-arena.jpg"
+                  alt="National Mock Test Simulator Arena"
                   className="f-card-img"
                 />
               </div>
@@ -428,7 +354,7 @@ export default function Home() {
       <section className="section-space why-section">
         <Container>
           <SectionHeading
-            eyebrow="The RR Edu Advantage"
+            eyebrow="The R Academy Advantage"
             title="Built for Clarity, Speed, and Retention"
             description="Our scientific methodology turns study time into measurable ranking improvements."
           />

@@ -48,7 +48,7 @@ export default function Footer() {
               <span className="brand-mark">
                 <span />
               </span>
-              <span>RREDU</span>
+              <span>R Academy</span>
             </Link>
             <p>Learn smarter. Go further.</p>
             <div className="socials">
@@ -81,8 +81,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 RREDU. All rights reserved.</span>
-          <span>Built for the next chapter.</span>
+          <span>© 2026 R Academy. All rights reserved.</span>
+          <span>Built for academic excellence.</span>
         </div>
       </Container>
     </footer>

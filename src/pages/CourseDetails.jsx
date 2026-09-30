@@ -29,7 +29,31 @@ function formatPrice(value) {
   }).format(value);
 }
 
+const educatorPhotoMap = {
+  "inst-ananya-sharma": "/assets/images/educators/ananya-sharma.jpg",
+  "inst-rohan-mehta": "/assets/images/educators/rohan-mehta.jpg",
+  "inst-priya-menon": "/assets/images/educators/priya-menon.jpg",
+  "inst-arjun-kapoor": "/assets/images/educators/arjun-kapoor.jpg",
+  "inst-kavya-iyer": "/assets/images/educators/kavya-iyer.jpg",
+  "inst-vikram-singh": "/assets/images/educators/vikram-singh.jpg",
+  "inst-meera-nair": "/assets/images/educators/meera-nair.jpg",
+  "inst-dev-malhotra": "/assets/images/educators/dev-malhotra.jpg",
+};
+
+const categoryFallback = {
+  JEE: "/assets/images/live-class.jpg",
+  NEET: "/assets/images/study-resources.jpg",
+  UPSC: "/assets/images/hero-ai.jpg",
+  Programming: "/assets/images/exam-arena.jpg",
+  Technology: "/assets/images/exam-arena.jpg",
+  School: "/assets/images/live-class.jpg",
+  Communication: "/assets/images/hero-ai.jpg",
+};
+
 function CourseMeta({ course }) {
+  const photo =
+    educatorPhotoMap[course.instructorId] ||
+    "/assets/images/educators/ananya-sharma.jpg";
   return (
     <div className="course-detail-meta">
       <span>
@@ -40,8 +64,24 @@ function CourseMeta({ course }) {
       <span>
         <Users size={15} /> {course.students.toLocaleString("en-IN")} students
       </span>
-      <span>
-        By <strong>{course.instructor}</strong>
+      <span className="course-detail-instructor-tag">
+        <Link
+          to={`/educators/${course.instructorId}`}
+          className="course-detail-instructor-link"
+          title={`View ${course.instructor}'s profile`}
+        >
+          <img
+            src={photo}
+            alt={course.instructor}
+            className="course-detail-instructor-avatar"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
+          />
+          <span>
+            By <strong>{course.instructor}</strong>
+          </span>
+        </Link>
       </span>
       <span>
         Updated{" "}
@@ -60,11 +100,20 @@ function CourseMeta({ course }) {
 function PreviewCard({ course, onPreview, onEnroll }) {
   const { isWishlisted, toggleWishlist } = useWishlist();
   const wishlisted = isWishlisted(course.id);
+  const fallbackThumb =
+    categoryFallback[course.category] || "/assets/images/live-class.jpg";
 
   return (
     <aside className="course-preview-card">
       <div className="course-preview-media">
-        <img src={course.thumbnail} alt={`${course.title} preview`} />
+        <img
+          src={course.thumbnail}
+          alt={`${course.title} preview`}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = fallbackThumb;
+          }}
+        />
         <button
           type="button"
           className="course-preview-play"

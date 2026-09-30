@@ -89,7 +89,7 @@ export default function LiveClasses() {
                 </span>
                 <Badge variant="primary">{activeLive.category}</Badge>
               </div>
-              <h1>Interactive Live Masterclasses</h1>
+              <h1>Interactive <em className="serif-accent">Live Masterclasses</em></h1>
               <p>
                 Learn in real-time with India's top educators. Ask live doubts,
                 participate in polls, and collaborate with 1M+ active learners.

@@ -146,7 +146,7 @@ export const exams = [
     ],
     featuredCourses: [
       "course-upsc-gs-foundation",
-      "course-communication-workplace",
+      "course-banking-quant-reasoning",
     ],
   },
   {
@@ -194,7 +194,7 @@ export const exams = [
           "Aptitude is a consistent scoring opportunity and deserves regular timed practice.",
       },
     ],
-    featuredCourses: ["course-gate-cse-core", "course-dsa-interview-patterns"],
+    featuredCourses: ["course-system-design-scale", "course-java-backend-mastery"],
   },
   {
     id: "ssc-cgl",
@@ -241,8 +241,8 @@ export const exams = [
       },
     ],
     featuredCourses: [
-      "course-ssc-cgl-complete",
       "course-banking-quant-reasoning",
+      "course-school-math-classes-9-10",
     ],
   },
   {
@@ -289,7 +289,10 @@ export const exams = [
           "A common foundation works well, with exam-specific mock practice added near each target date.",
       },
     ],
-    featuredCourses: ["course-banking-quant-reasoning", "course-sql-analytics"],
+    featuredCourses: [
+      "course-banking-quant-reasoning",
+      "course-school-math-classes-9-10",
+    ],
   },
   {
     id: "cat",
@@ -330,7 +333,10 @@ export const exams = [
           "Strong performance comes from balancing both; selection is often the highest-leverage skill.",
       },
     ],
-    featuredCourses: ["course-cat-quant-verbal", "course-sql-analytics"],
+    featuredCourses: [
+      "course-banking-quant-reasoning",
+      "course-system-design-scale",
+    ],
   },
   {
     id: "cuet",
@@ -374,7 +380,7 @@ export const exams = [
     ],
     featuredCourses: [
       "course-school-math-classes-9-10",
-      "course-communication-workplace",
+      "course-jee-physics-foundation",
     ],
   },
   {
@@ -421,7 +427,7 @@ export const exams = [
     ],
     featuredCourses: [
       "course-school-math-classes-9-10",
-      "course-communication-workplace",
+      "course-jee-physics-foundation",
     ],
   },
   {

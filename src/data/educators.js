@@ -4,14 +4,50 @@ const educatorReview = (student, rating, comment) => ({
   comment,
   date: "2026-08-14",
 });
-const avatar = (initials) => initials;
+
+const educatorPhotoMap = {
+  "inst-ananya-sharma": "/assets/images/educators/ananya-sharma.jpg",
+  "ananya-sharma": "/assets/images/educators/ananya-sharma.jpg",
+  "AS": "/assets/images/educators/ananya-sharma.jpg",
+
+  "inst-rohan-mehta": "/assets/images/educators/rohan-mehta.jpg",
+  "rohan-mehta": "/assets/images/educators/rohan-mehta.jpg",
+  "RM": "/assets/images/educators/rohan-mehta.jpg",
+
+  "inst-priya-menon": "/assets/images/educators/priya-menon.jpg",
+  "priya-menon": "/assets/images/educators/priya-menon.jpg",
+  "PM": "/assets/images/educators/priya-menon.jpg",
+
+  "inst-arjun-kapoor": "/assets/images/educators/arjun-kapoor.jpg",
+  "arjun-kapoor": "/assets/images/educators/arjun-kapoor.jpg",
+  "AK": "/assets/images/educators/arjun-kapoor.jpg",
+
+  "inst-kavya-iyer": "/assets/images/educators/kavya-iyer.jpg",
+  "kavya-iyer": "/assets/images/educators/kavya-iyer.jpg",
+  "KI": "/assets/images/educators/kavya-iyer.jpg",
+
+  "inst-vikram-singh": "/assets/images/educators/vikram-singh.jpg",
+  "vikram-singh": "/assets/images/educators/vikram-singh.jpg",
+  "VS": "/assets/images/educators/vikram-singh.jpg",
+
+  "inst-meera-nair": "/assets/images/educators/meera-nair.jpg",
+  "meera-nair": "/assets/images/educators/meera-nair.jpg",
+  "MN": "/assets/images/educators/meera-nair.jpg",
+
+  "inst-dev-malhotra": "/assets/images/educators/dev-malhotra.jpg",
+  "dev-malhotra": "/assets/images/educators/dev-malhotra.jpg",
+  "DM": "/assets/images/educators/dev-malhotra.jpg",
+};
+
+const avatar = (initials, slug, id) =>
+  educatorPhotoMap[id] || educatorPhotoMap[slug] || educatorPhotoMap[initials] || initials;
 
 export const educators = [
   {
     id: "inst-ananya-sharma",
     slug: "ananya-sharma",
     name: "Ananya Sharma",
-    avatar: avatar("AS"),
+    avatar: avatar("AS", "ananya-sharma", "inst-ananya-sharma"),
     subject: "Physics",
     category: "Competitive Exams",
     experience: "8+ years",
@@ -46,7 +82,7 @@ export const educators = [
     id: "inst-rohan-mehta",
     slug: "rohan-mehta",
     name: "Rohan Mehta",
-    avatar: avatar("RM"),
+    avatar: avatar("RM", "rohan-mehta", "inst-rohan-mehta"),
     subject: "Java",
     category: "Programming",
     experience: "10+ years",
@@ -59,7 +95,7 @@ export const educators = [
       "Built production systems across three industries",
       "Published 16 hands-on learning paths",
     ],
-    courses: ["course-java-backend-mastery", "course-spring-boot-production"],
+    courses: ["course-java-backend-mastery"],
     reviews: [
       educatorReview(
         "Nikhil Rao",
@@ -77,7 +113,7 @@ export const educators = [
     id: "inst-priya-menon",
     slug: "priya-menon",
     name: "Priya Menon",
-    avatar: avatar("PM"),
+    avatar: avatar("PM", "priya-menon", "inst-priya-menon"),
     subject: "Biology",
     category: "Competitive Exams",
     experience: "9+ years",
@@ -90,7 +126,7 @@ export const educators = [
       "Created 11 Biology revision programs",
       "Known for diagram-led teaching",
     ],
-    courses: ["course-neet-biology-complete", "course-ai-ml-foundations"],
+    courses: ["course-neet-biology-complete"],
     reviews: [
       educatorReview(
         "Sneha Kulkarni",
@@ -108,7 +144,7 @@ export const educators = [
     id: "inst-arjun-kapoor",
     slug: "arjun-kapoor",
     name: "Arjun Kapoor",
-    avatar: avatar("AK"),
+    avatar: avatar("AK", "arjun-kapoor", "inst-arjun-kapoor"),
     subject: "System Design",
     category: "Technology",
     experience: "12+ years",
@@ -125,7 +161,7 @@ export const educators = [
       "Reviewed 500+ architecture interviews",
       "Led platforms serving millions of users",
     ],
-    courses: ["course-cat-quant-verbal", "course-system-design-scale"],
+    courses: ["course-system-design-scale"],
     reviews: [
       educatorReview(
         "Saurabh Jain",
@@ -143,7 +179,7 @@ export const educators = [
     id: "inst-kavya-iyer",
     slug: "kavya-iyer",
     name: "Kavya Iyer",
-    avatar: avatar("KI"),
+    avatar: avatar("KI", "kavya-iyer", "inst-kavya-iyer"),
     subject: "Quantitative Aptitude",
     category: "Career Skills",
     experience: "7+ years",
@@ -156,7 +192,7 @@ export const educators = [
       "Coached 19,000+ aptitude learners",
       "Built practical speed-drill systems",
     ],
-    courses: ["course-banking-quant-reasoning", "course-python-automation"],
+    courses: ["course-banking-quant-reasoning"],
     reviews: [
       educatorReview(
         "Sahil Gupta",
@@ -174,7 +210,7 @@ export const educators = [
     id: "inst-vikram-singh",
     slug: "vikram-singh",
     name: "Vikram Singh",
-    avatar: avatar("VS"),
+    avatar: avatar("VS", "vikram-singh", "inst-vikram-singh"),
     subject: "General Studies",
     category: "Competitive Exams",
     experience: "14+ years",
@@ -187,7 +223,7 @@ export const educators = [
       "Mentored multiple mains cohorts",
       "Created 21 integrated GS courses",
     ],
-    courses: ["course-upsc-gs-foundation", "course-cloud-architecture-aws"],
+    courses: ["course-upsc-gs-foundation"],
     reviews: [
       educatorReview(
         "Madhav Rao",
@@ -205,34 +241,30 @@ export const educators = [
     id: "inst-meera-nair",
     slug: "meera-nair",
     name: "Meera Nair",
-    avatar: avatar("MN"),
-    subject: "Reasoning",
-    category: "Competitive Exams",
+    avatar: avatar("MN", "meera-nair", "inst-meera-nair"),
+    subject: "Mathematics",
+    category: "School",
     experience: "8+ years",
     students: 19800,
     rating: 4.7,
     coursesCount: 13,
-    bio: "Meera teaches exam reasoning and school mathematics with a focus on clean steps, time awareness, and confidence-building feedback.",
-    expertise: ["Reasoning", "SSC Preparation", "School Mathematics"],
+    bio: "Meera teaches school mathematics and analytical thinking with a focus on clean steps, time awareness, and confidence-building feedback.",
+    expertise: ["School Mathematics", "Algebra", "Geometry"],
     achievements: [
       "Designed 13 practice-led courses",
-      "Specialist in error analysis",
+      "Specialist in foundational mathematics",
     ],
-    courses: [
-      "course-ssc-cgl-complete",
-      "course-school-math-classes-9-10",
-      "course-sql-analytics",
-    ],
+    courses: ["course-school-math-classes-9-10"],
     reviews: [
       educatorReview(
         "Vivek Tiwari",
         5,
-        "The short lessons fit perfectly into my workday.",
+        "The structured lessons fit smoothly into school exam preparation.",
       ),
       educatorReview(
         "Ritika Sharma",
         5,
-        "Patient, precise, and very good at finding the source of a mistake.",
+        "Patient, precise, and very good at building student confidence.",
       ),
     ],
   },
@@ -240,7 +272,7 @@ export const educators = [
     id: "inst-dev-malhotra",
     slug: "dev-malhotra",
     name: "Dev Malhotra",
-    avatar: avatar("DM"),
+    avatar: avatar("DM", "dev-malhotra", "inst-dev-malhotra"),
     subject: "Web Development",
     category: "Programming",
     experience: "11+ years",
@@ -253,12 +285,7 @@ export const educators = [
       "Built and reviewed 100+ product interfaces",
       "Mentored 50,000+ developers",
     ],
-    courses: [
-      "course-react-frontend-engineering",
-      "course-dsa-interview-patterns",
-      "course-devops-cicd",
-      "course-fullstack-web-development",
-    ],
+    courses: ["course-fullstack-web-development"],
     reviews: [
       educatorReview(
         "Ayesha Khan",
@@ -269,235 +296,6 @@ export const educators = [
         "Mihir Joshi",
         5,
         "Fantastic balance of visual polish and engineering depth.",
-      ),
-    ],
-  },
-  {
-    id: "inst-nisha-kulkarni",
-    slug: "nisha-kulkarni",
-    name: "Nisha Kulkarni",
-    avatar: avatar("NK"),
-    subject: "Chemistry",
-    category: "Competitive Exams",
-    experience: "6+ years",
-    students: 11600,
-    rating: 4.6,
-    coursesCount: 7,
-    bio: "Nisha uses reaction maps, spaced revision, and exam-style questions to make Chemistry concepts easier to organize and recall.",
-    expertise: ["Organic Chemistry", "Inorganic Chemistry", "Exam Revision"],
-    achievements: [
-      "Created seven Chemistry study tracks",
-      "Known for compact concept maps",
-    ],
-    courses: ["course-jee-physics-foundation", "course-neet-biology-complete"],
-    reviews: [
-      educatorReview(
-        "Kunal Mehta",
-        5,
-        "The revision maps help me see the whole chapter at once.",
-      ),
-      educatorReview(
-        "Anvi Rao",
-        4,
-        "Clear explanations and useful question selection.",
-      ),
-    ],
-  },
-  {
-    id: "inst-manav-desai",
-    slug: "manav-desai",
-    name: "Manav Desai",
-    avatar: avatar("MD"),
-    subject: "Mathematics",
-    category: "School",
-    experience: "13+ years",
-    students: 14200,
-    rating: 4.8,
-    coursesCount: 10,
-    bio: "Manav helps school learners replace formula memorization with visual reasoning, worked examples, and deliberate board practice.",
-    expertise: ["Algebra", "Geometry", "Board Preparation"],
-    achievements: [
-      "Taught across three school boards",
-      "Built 10 concept-first math courses",
-    ],
-    courses: ["course-school-math-classes-9-10", "course-cat-quant-verbal"],
-    reviews: [
-      educatorReview(
-        "Aarav Singh",
-        5,
-        "I understand why the formulas work now.",
-      ),
-      educatorReview(
-        "Riya Paul",
-        5,
-        "The practice sets are challenging in a good way.",
-      ),
-    ],
-  },
-  {
-    id: "inst-tara-iqbal",
-    slug: "tara-iqbal",
-    name: "Tara Iqbal",
-    avatar: avatar("TI"),
-    subject: "Reasoning",
-    category: "Career Skills",
-    experience: "9+ years",
-    students: 17300,
-    rating: 4.7,
-    coursesCount: 8,
-    bio: "Tara specializes in turning reasoning puzzles into repeatable decision patterns that learners can use under time pressure.",
-    expertise: ["Logical Reasoning", "Puzzle Solving", "Mock Analysis"],
-    achievements: [
-      "Built eight reasoning practice libraries",
-      "Coached learners across banking and SSC exams",
-    ],
-    courses: ["course-banking-quant-reasoning", "course-ssc-cgl-complete"],
-    reviews: [
-      educatorReview(
-        "Neha Thomas",
-        5,
-        "Her puzzle approach is systematic and easy to practice.",
-      ),
-      educatorReview(
-        "Amit Roy",
-        4,
-        "The mock breakdowns are the strongest part of the course.",
-      ),
-    ],
-  },
-  {
-    id: "inst-sameer-rao",
-    slug: "sameer-rao",
-    name: "Sameer Rao",
-    avatar: avatar("SR"),
-    subject: "General Studies",
-    category: "Competitive Exams",
-    experience: "10+ years",
-    students: 15600,
-    rating: 4.6,
-    coursesCount: 9,
-    bio: "Sameer teaches current affairs and general studies through concise context, clear timelines, and practical recall systems.",
-    expertise: ["Current Affairs", "Civics", "General Awareness"],
-    achievements: [
-      "Published nine awareness courses",
-      "Created weekly recall frameworks",
-    ],
-    courses: ["course-upsc-gs-foundation", "course-ssc-cgl-complete"],
-    reviews: [
-      educatorReview(
-        "Maya Sen",
-        5,
-        "The weekly context notes make current affairs much easier to retain.",
-      ),
-      educatorReview(
-        "Dev K",
-        4,
-        "Focused lessons that respect a busy preparation schedule.",
-      ),
-    ],
-  },
-  {
-    id: "inst-isha-kapoor",
-    slug: "isha-kapoor",
-    name: "Isha Kapoor",
-    avatar: avatar("IK"),
-    subject: "English",
-    category: "Communication",
-    experience: "8+ years",
-    students: 12700,
-    rating: 4.8,
-    coursesCount: 6,
-    bio: "Isha helps learners write and speak with clarity by focusing on structure, audience, and the confidence to revise their first draft.",
-    expertise: [
-      "Professional English",
-      "Reading Comprehension",
-      "Presentation Skills",
-    ],
-    achievements: [
-      "Designed six communication programs",
-      "Coached early-career professionals across disciplines",
-    ],
-    courses: ["course-communication-workplace", "course-cat-quant-verbal"],
-    reviews: [
-      educatorReview(
-        "Ira Sen",
-        5,
-        "The writing frameworks immediately improved my work updates.",
-      ),
-      educatorReview(
-        "Akhil Thomas",
-        5,
-        "Warm teaching with exercises that feel genuinely useful.",
-      ),
-    ],
-  },
-  {
-    id: "inst-kabir-anand",
-    slug: "kabir-anand",
-    name: "Kabir Anand",
-    avatar: avatar("KA"),
-    subject: "AI/ML",
-    category: "Technology",
-    experience: "9+ years",
-    students: 14900,
-    rating: 4.7,
-    coursesCount: 8,
-    bio: "Kabir teaches machine learning foundations with an emphasis on evaluation, reproducibility, and responsible experimentation.",
-    expertise: ["Machine Learning", "Python", "Model Evaluation"],
-    achievements: [
-      "Led applied ML teams",
-      "Built eight hands-on data learning paths",
-    ],
-    courses: [
-      "course-ai-ml-foundations",
-      "course-python-automation",
-      "course-sql-analytics",
-    ],
-    reviews: [
-      educatorReview(
-        "Ankit Verma",
-        5,
-        "The evaluation lessons are unusually practical.",
-      ),
-      educatorReview(
-        "Rhea Thomas",
-        4,
-        "Clear notebooks and a very grounded approach to ML.",
-      ),
-    ],
-  },
-  {
-    id: "inst-aditi-sen",
-    slug: "aditi-sen",
-    name: "Aditi Sen",
-    avatar: avatar("AS"),
-    subject: "Computer Science",
-    category: "Technology",
-    experience: "7+ years",
-    students: 10800,
-    rating: 4.6,
-    coursesCount: 7,
-    bio: "Aditi helps learners understand the systems beneath modern software, from data structures to cloud delivery and reliable operations.",
-    expertise: ["Computer Science", "Cloud Architecture", "DevOps"],
-    achievements: [
-      "Designed seven systems-focused courses",
-      "Mentored developers moving into platform teams",
-    ],
-    courses: [
-      "course-gate-cse-core",
-      "course-cloud-architecture-aws",
-      "course-devops-cicd",
-    ],
-    reviews: [
-      educatorReview(
-        "Vishal Nair",
-        5,
-        "The architecture diagrams make the services much easier to remember.",
-      ),
-      educatorReview(
-        "Rajat Singh",
-        4,
-        "Strong connections between fundamentals and delivery work.",
       ),
     ],
   },

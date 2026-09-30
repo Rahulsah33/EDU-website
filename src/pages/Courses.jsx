@@ -33,34 +33,31 @@ const categories = [
   { label: "All", matches: () => true },
   {
     label: "Competitive Exams",
-    matches: (course) => competitiveExams.includes(course.category),
-  },
-  { label: "School", matches: (course) => course.category === "School" },
-  {
-    label: "Programming",
-    matches: (course) => programming.includes(course.category),
+    matches: (course) => ["JEE", "NEET", "UPSC"].includes(course.category),
   },
   {
-    label: "Technology",
-    matches: (course) => technology.includes(course.category),
+    label: "Programming & Tech",
+    matches: (course) =>
+      ["Java", "Web Development", "System Design", "Technology"].includes(
+        course.category,
+      ),
   },
   {
-    label: "Career Skills",
-    matches: (course) => course.category === "Communication",
-  },
-  {
-    label: "Communication",
-    matches: (course) => course.category === "Communication",
+    label: "School & Aptitude",
+    matches: (course) =>
+      ["School", "Banking", "Career Skills"].includes(course.category),
   },
 ];
 
 const categoryMatches = {
-  "Competitive Exams": (course) => competitiveExams.includes(course.category),
-  School: (course) => course.category === "School",
-  Programming: (course) => programming.includes(course.category),
-  Technology: (course) => technology.includes(course.category),
-  "Career Skills": (course) => course.category === "Communication",
-  Communication: (course) => course.category === "Communication",
+  "Competitive Exams": (course) =>
+    ["JEE", "NEET", "UPSC"].includes(course.category),
+  "Programming & Tech": (course) =>
+    ["Java", "Web Development", "System Design", "Technology"].includes(
+      course.category,
+    ),
+  "School & Aptitude": (course) =>
+    ["School", "Banking", "Career Skills"].includes(course.category),
 };
 
 const priceMatches = {
@@ -131,11 +128,10 @@ export default function Courses() {
           </div>
           <div className="courses-hero-copy">
             <div>
-              <span className="eyebrow">Build your next chapter</span>
-              <h1>Explore Courses</h1>
+              <span className="eyebrow">Academic Curriculum</span>
+              <h1>Explore <em className="serif-accent">Curated Programs</em></h1>
               <p>
-                Learn from expert educators and build skills that move you
-                forward.
+                Learn directly from India's foremost educators and advance your academic trajectory.
               </p>
             </div>
             <div className="course-search" role="search">

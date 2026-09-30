@@ -194,7 +194,7 @@ export default function Pricing() {
             <div>
               <h4>30-Day 100% Money-Back Guarantee</h4>
               <p>
-                Try RR Edu risk-free. If you don't feel noticeably more confident
+                Try R Academy risk-free. If you don't feel noticeably more confident
                 in your exam preparation within 30 days, we'll refund every rupee.
               </p>
             </div>

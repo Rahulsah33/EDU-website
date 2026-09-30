@@ -74,7 +74,14 @@ export default function CoursePreviewModal({ course, isOpen, onClose }) {
               </button>
             </div>
             <div className="mock-video">
-              <img src={course.thumbnail} alt="" />
+              <img
+                src={course.thumbnail}
+                alt={course.title}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/assets/images/live-class.jpg";
+                }}
+              />
               <div className="mock-video-shade" />
               <button
                 className="mock-video-play"

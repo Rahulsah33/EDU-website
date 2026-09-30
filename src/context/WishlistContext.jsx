@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { WishlistContext } from "./wishlistContext.js";
 
-const STORAGE_KEY = "rr-edu-wishlist";
+const STORAGE_KEY = "r-academy-wishlist";
 
 function readWishlist() {
   try {

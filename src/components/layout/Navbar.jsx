@@ -58,14 +58,14 @@ export default function Navbar() {
             className="brand"
             to="/"
             onClick={() => setOpen(false)}
-            aria-label="RR Edu Home"
+            aria-label="R Academy Home"
           >
             <div className="brand-icon-wrapper">
               <GraduationCap size={20} className="brand-cap-icon" />
               <div className="brand-glow-ring" />
             </div>
             <div className="brand-text-wrap">
-              <span className="brand-title">RR EDU</span>
+              <span className="brand-title">R ACADEMY</span>
             </div>
           </Link>
 
@@ -228,7 +228,7 @@ export default function Navbar() {
                     <LayoutDashboard size={15} /> Student Dashboard
                   </NavLink>
                   <NavLink to="/about" onClick={() => setOpen(false)}>
-                    About RREDU
+                    About R Academy
                   </NavLink>
                   <NavLink to="/contact" onClick={() => setOpen(false)}>
                     Contact Support
